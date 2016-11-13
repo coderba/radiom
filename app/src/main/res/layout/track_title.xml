@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:transitionName="@string/transition_name_title">
+
+    <TextView
+        android:id="@+id/song_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instant Crush"
+        android:textColor="#000"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" - "
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="#000"/>
+
+    <!--android:textColor="?android:attr/textColorSecondary"-->
+
+    <TextView
+        android:id="@+id/band_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daft Punk"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="#000"
+        />
+
+    <!--android:textColor="?android:attr/textColorSecondary"-->
+
+</LinearLayout>

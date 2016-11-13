@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?attr/selectableItemBackground"
+    android:minHeight="?attr/listPreferredItemHeight"
+    android:transitionGroup="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/cover"
+                android:layout_width="@dimen/cover_size_mini"
+                android:layout_height="@dimen/cover_size_mini"
+                android:scaleType="centerCrop"
+                android:transitionName="@string/transition_name_cover"
+                tools:src="@drawable/album_cover_daft_punk" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/inner_padding"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/title"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="#000"
+                    android:transitionName="@string/transition_name_title" />
+
+                <TextView
+                    android:id="@+id/artist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/artist"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="#000"
+                    android:transitionName="@string/transition_name_artist" />
+
+            </LinearLayout>
+
+<!--            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/list_item_play_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/cover"
+                android:layout_marginLeft="0dp"
+                android:onClick="onFabClick"
+                android:scaleType="center"
+                android:src="@drawable/ic_play_animatable"
+                android:transitionName="@string/transition_name_fab"
+                app:fabSize="mini" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="275dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="60dp"
+            android:background="@color/colorAccentTransparent" />
+    </RelativeLayout>
+</FrameLayout>
