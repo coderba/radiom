@@ -51,7 +51,7 @@ public class ProgressViewTransition extends Transition {
 
     public ProgressViewTransition(Context context, AttributeSet attrs) {
         super(context, attrs);
-        TypedArray a = context.obtainStyledAttributes(attrs, ProgressView);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
         int morph = a.getInt(R.styleable.ProgressView_morph, 0);
         a.recycle();
         mMorph = morph;
