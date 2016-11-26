@@ -25,13 +25,15 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.sample.andremion.musicplayer.R;
 import com.sample.andremion.musicplayer.music.MusicContent;
-import com.sample.andremion.musicplayer.util.Helper;
 import com.sample.andremion.musicplayer.view.RecyclerViewAdapter;
 
 import java.util.ArrayList;
@@ -39,7 +41,7 @@ import java.util.List;
 
 public class MainActivity extends PlayerActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
-
+    public String value;
     private View mCoverView;
     private View mTitleView;
     private View mTimeView;
@@ -55,7 +57,37 @@ public class MainActivity extends PlayerActivity {
 
         List<MusicContent> ITEMS = new ArrayList<>();
 
-        ITEMS.add(new MusicContent(R.drawable.album_cover_death_cab, "I will possess your heart", "Death Cab for Cutie", 515));
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference("message");
+        databaseReference.setValue("cem başar başkan");
+
+
+        value = "ali desidero";
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                value = dataSnapshot.getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                value = "failed to read value";
+            }
+        });
+
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                value = dataSnapshot.getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                value = "failed to read value";
+            }
+        });
+
+        ITEMS.add(new MusicContent(R.drawable.album_cover_death_cab, value, value, 515));
         ITEMS.add(new MusicContent(R.drawable.album_cover_the_1975, "You", "the 1975", 591));
         ITEMS.add(new MusicContent(R.drawable.album_cover_pinback, "The Yellow Ones", "Pinback", 215));
         ITEMS.add(new MusicContent(R.drawable.album_cover_soad, "Chop suey", "System of a down", 242));

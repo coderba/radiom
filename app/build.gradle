@@ -28,5 +28,8 @@ dependencies {
     compile "com.android.support:recyclerview-v7:$APPCOMPAT_VERSION"
     compile "com.android.support:percent:$APPCOMPAT_VERSION"
     compile "com.github.andremion:musiccoverview:$MUSICCOVERVIEW_VERSION"
+    compile 'com.google.firebase:firebase-database:10.0.0'
     testCompile 'junit:junit:4.12'
 }
+
+apply plugin: 'com.google.gms.google-services'

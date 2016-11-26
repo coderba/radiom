@@ -22,9 +22,7 @@ public class DetailActivity extends PlayerActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_detail);
 
-
         //songTextView = (TextView) findViewById(R.id.song_name);
-
         mCoverView = (MusicCoverView) findViewById(R.id.cover);
         //mCoverView.setBackgroundResource(R.drawable.metallica_load);
         mCoverView.setImageResource(R.drawable.metallica_load);
@@ -32,7 +30,7 @@ public class DetailActivity extends PlayerActivity {
         bandTextView = (TextView) findViewById(R.id.band_name);
 
         bundle = getIntent().getExtras();
-        
+
         if (bundle != null) {
             if (bundle.getString("title") != null) {
                 songTextView.setText(bundle.getString("title"));
