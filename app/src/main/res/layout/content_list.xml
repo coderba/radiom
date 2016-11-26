@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.sample.andremion.musicplayer.view.InsetsPercentRelativeLayout
+<com.sample.andremion.raido.view.InsetsPercentRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="#FFF">
+    android:background="#FFF"
+    android:fitsSystemWindows="true">
 
     <com.andremion.music.MusicCoverView
         android:id="@+id/cover"
         android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:scaleType="centerCrop"
         android:src="@drawable/album_cover_daft_punk"
         android:transitionName="@string/transition_name_cover"
-        app:layout_heightPercent="35%"
-        android:layout_height="1dp" />
+        app:layout_heightPercent="35%" />
 
     <View
         android:id="@+id/pane"
@@ -51,11 +51,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="#000"
                 android:transitionName="@string/transition_name_time"
-                tools:text="02:30"
-                android:textColor="#000"/>
+                tools:text="02:30" />
 
-            <com.sample.andremion.musicplayer.view.ProgressView
+            <com.sample.andremion.raido.view.ProgressView
                 android:id="@+id/progress"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -69,9 +69,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="#000"
                 android:transitionName="@string/transition_name_duration"
-                tools:text="04:30"
-                android:textColor="#000"/>
+                tools:text="04:30" />
 
             <Space
                 android:id="@+id/fab_placeholder"
@@ -97,8 +97,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="My favorites"
-            android:textColor="#000"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="#000" />
 
         <TextView
             android:id="@+id/counter"
@@ -106,8 +106,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/name"
             android:text="102 songs"
-            android:textColor="#000"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#000" />
 
         <ImageView
             android:id="@+id/options"
@@ -149,4 +149,4 @@
         android:transitionName="@string/transition_name_fab"
         app:fabSize="mini"/>
 
-</com.sample.andremion.musicplayer.view.InsetsPercentRelativeLayout>
+</com.sample.andremion.raido.view.InsetsPercentRelativeLayout>

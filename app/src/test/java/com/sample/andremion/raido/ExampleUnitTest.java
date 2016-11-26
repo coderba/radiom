@@ -1,4 +1,4 @@
-package com.sample.andremion.musicplayer;
+package com.sample.andremion.raido;
 
 import org.junit.Test;
 

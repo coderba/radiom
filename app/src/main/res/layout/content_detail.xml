@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.sample.andremion.musicplayer.view.InsetsPercentRelativeLayout
+<com.sample.andremion.raido.view.InsetsPercentRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="#FFF">
+    android:background="#FFF"
+    android:fitsSystemWindows="true">
 
     <com.andremion.music.MusicCoverView
         android:id="@+id/cover"
@@ -26,7 +26,7 @@
         android:layout_centerHorizontal="true"
         app:layout_marginTopPercent="10%"/>
 
-    <com.sample.andremion.musicplayer.view.ProgressView
+    <com.sample.andremion.raido.view.ProgressView
         android:id="@+id/progress"
         android:layout_centerInParent="true"
         android:transitionName="@string/transition_name_progress"
@@ -139,4 +139,4 @@
 
     </LinearLayout>
 
-</com.sample.andremion.musicplayer.view.InsetsPercentRelativeLayout>
+</com.sample.andremion.raido.view.InsetsPercentRelativeLayout>
