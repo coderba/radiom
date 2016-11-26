@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "992778808616",
+    "firebase_url": "https://glowing-heat-6304.firebaseio.com",
+    "project_id": "glowing-heat-6304",
+    "storage_bucket": "glowing-heat-6304.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992778808616:android:1fb54cc9ed391769",
+        "android_client_info": {
+          "package_name": "com.sample.andremion.musicplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992778808616-un1l1jk65jb1qdl2349sf0k02khhdcek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sample.andremion.musicplayer",
+            "certificate_hash": "6C5DBB434D8DEDDD0D5577F0AFD44CA08DC7A102"
+          }
+        },
+        {
+          "client_id": "992778808616-l5cuf2vmf4c6aful8ldqtnnonsak3sa5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdAe1bR8a1ahf_xmGqI6IfDlRmt_kYAnM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992778808616-l5cuf2vmf4c6aful8ldqtnnonsak3sa5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
