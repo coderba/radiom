@@ -1,9 +1,4 @@
-package com.sample.andremion.musicplayer.music;
-
-import com.sample.andremion.musicplayer.R;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.ideasoftware.raido.music;
 
 public class MusicContent {
         private final int mCover;

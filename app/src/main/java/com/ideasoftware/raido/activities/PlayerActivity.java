@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.sample.andremion.musicplayer.activities;
+package com.ideasoftware.raido.activities;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -30,26 +30,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateUtils;
 import android.widget.TextView;
 
-import com.sample.andremion.musicplayer.R;
-import com.sample.andremion.musicplayer.music.PlayerService;
-import com.sample.andremion.musicplayer.view.ProgressView;
+import com.ideasoftware.raido.R;
+import com.ideasoftware.raido.music.PlayerService;
+import com.ideasoftware.raido.view.ProgressView;
 
 public abstract class PlayerActivity extends AppCompatActivity {
 
     private PlayerService mService;
     private boolean mBound = false;
-    private TextView mTimeView;
-    private TextView mDurationView;
-    private ProgressView mProgressView;
-    private final Handler mUpdateProgressHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            final int position = mService.getPosition();
-            final int duration = mService.getDuration();
-            onUpdateProgress(position, duration);
-            sendEmptyMessageDelayed(0, DateUtils.SECOND_IN_MILLIS);
-        }
-    };
     /**
      * Defines callbacks for service binding, passed to bindService()
      */
@@ -68,6 +56,18 @@ public abstract class PlayerActivity extends AppCompatActivity {
         public void onServiceDisconnected(ComponentName classname) {
             mBound = false;
             onUnbind();
+        }
+    };
+    private TextView mTimeView;
+    private TextView mDurationView;
+    private ProgressView mProgressView;
+    private final Handler mUpdateProgressHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            final int position = mService.getPosition();
+            final int duration = mService.getDuration();
+            onUpdateProgress(position, duration);
+            sendEmptyMessageDelayed(0, DateUtils.SECOND_IN_MILLIS);
         }
     };
 

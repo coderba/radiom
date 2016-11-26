@@ -1,4 +1,4 @@
-package com.sample.andremion.musicplayer.activities;
+package com.ideasoftware.raido.activities;
 
 import android.os.Bundle;
 import android.transition.Transition;
@@ -6,9 +6,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.andremion.music.MusicCoverView;
-import com.sample.andremion.musicplayer.R;
-import com.sample.andremion.musicplayer.util.Helper;
-import com.sample.andremion.musicplayer.view.TransitionAdapter;
+import com.ideasoftware.raido.R;
+import com.ideasoftware.raido.util.Helper;
+import com.ideasoftware.raido.view.TransitionAdapter;
+
 
 public class DetailActivity extends PlayerActivity {
 

@@ -1,4 +1,4 @@
-package com.sample.andremion.musicplayer.util;
+package com.ideasoftware.raido.util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

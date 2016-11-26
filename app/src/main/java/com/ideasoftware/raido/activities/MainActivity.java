@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.sample.andremion.musicplayer.activities;
+package com.ideasoftware.raido.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,9 +32,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.sample.andremion.musicplayer.R;
-import com.sample.andremion.musicplayer.music.MusicContent;
-import com.sample.andremion.musicplayer.view.RecyclerViewAdapter;
+import com.ideasoftware.raido.R;
+import com.ideasoftware.raido.music.MusicContent;
 
 import java.util.ArrayList;
 import java.util.List;

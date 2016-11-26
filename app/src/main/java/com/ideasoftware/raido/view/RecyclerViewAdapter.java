@@ -1,4 +1,4 @@
-package com.sample.andremion.musicplayer.view;
+package com.ideasoftware.raido.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,15 +12,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.andremion.music.MusicCoverView;
-import com.sample.andremion.musicplayer.R;
-import com.sample.andremion.musicplayer.activities.DetailActivity;
-import com.sample.andremion.musicplayer.music.MusicContent;
-import com.sample.andremion.musicplayer.util.Helper;
+import com.ideasoftware.raido.R;
+import com.ideasoftware.raido.activities.DetailActivity;
+import com.ideasoftware.raido.music.MusicContent;
+import com.ideasoftware.raido.util.Helper;
 
 import java.util.List;
+
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private static String TAG = RecyclerViewAdapter.class.getSimpleName();

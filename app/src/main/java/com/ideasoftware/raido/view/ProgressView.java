@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.sample.andremion.musicplayer.view;
+package com.ideasoftware.raido.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -28,7 +28,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.sample.andremion.musicplayer.R;
+import com.ideasoftware.raido.R;
+
 
 public class ProgressView extends View {
 

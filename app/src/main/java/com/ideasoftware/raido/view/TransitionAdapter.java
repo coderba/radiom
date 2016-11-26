@@ -1,4 +1,4 @@
-package com.sample.andremion.musicplayer.view;
+package com.ideasoftware.raido.view;
 
 import android.transition.Transition;
 

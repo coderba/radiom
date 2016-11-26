@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.sample.andremion.musicplayer.transition;
+package com.ideasoftware.raido.transition;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
@@ -26,8 +26,9 @@ import android.util.AttributeSet;
 import android.util.Property;
 import android.view.ViewGroup;
 
-import com.sample.andremion.musicplayer.R;
-import com.sample.andremion.musicplayer.view.ProgressView;
+import com.ideasoftware.raido.R;
+import com.ideasoftware.raido.view.ProgressView;
+
 
 public class ProgressViewTransition extends Transition {
 
@@ -50,7 +51,7 @@ public class ProgressViewTransition extends Transition {
 
     public ProgressViewTransition(Context context, AttributeSet attrs) {
         super(context, attrs);
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
+        TypedArray a = context.obtainStyledAttributes(attrs, ProgressView);
         int morph = a.getInt(R.styleable.ProgressView_morph, 0);
         a.recycle();
         mMorph = morph;
