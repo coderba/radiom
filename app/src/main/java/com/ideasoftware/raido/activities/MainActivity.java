@@ -34,6 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ideasoftware.raido.R;
 import com.ideasoftware.raido.music.MusicContent;
+import com.ideasoftware.raido.view.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
