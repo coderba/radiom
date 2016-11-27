@@ -11,7 +11,7 @@
         <changeClipBounds />
         <changeImageTransform />
         <transition
-            class="com.sample.andremion.raido.transition.ProgressViewTransition"
+            class="com.ideasoftware.raido.transition.ProgressViewTransition"
             app:morph="1" />
         <targets>
             <target android:targetId="@id/progress" />

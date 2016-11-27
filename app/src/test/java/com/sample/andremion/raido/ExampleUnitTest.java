@@ -1,4 +1,4 @@
-package com.sample.andremion.raido;
+package com.ideasoftware.raido;
 
 import org.junit.Test;
 

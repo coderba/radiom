@@ -1,4 +1,4 @@
-package com.sample.andremion.raido;
+package com.ideasoftware.raido;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
