@@ -33,13 +33,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ideasoftware.raido.R;
+import com.ideasoftware.raido.model.Station;
 import com.ideasoftware.raido.music.MusicContent;
 import com.ideasoftware.raido.view.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class MainActivity extends PlayerActivity {
+
     private static final String TAG = MainActivity.class.getSimpleName();
     public String value;
     private View mCoverView;
@@ -49,12 +52,13 @@ public class MainActivity extends PlayerActivity {
     private View mProgressView;
     private View mFabView;
     private Intent intent;
+    Station station;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_list);
-
+        station = new Station();
         List<MusicContent> ITEMS = new ArrayList<>();
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -62,32 +66,33 @@ public class MainActivity extends PlayerActivity {
         databaseReference.setValue("cem başar başkan");
 
 
-        value = "ali desidero";
+        station.setStationName("asdasd");
+        station.setPlayingSongName("asdasd");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                value = dataSnapshot.getValue(String.class);
+                System.out.print("metallica");
+                System.out.print(dataSnapshot.getValue(String.class));
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                value = "failed to read value";
             }
         });
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                value = dataSnapshot.getValue(String.class);
+                System.out.print("metallica");
+                System.out.print(dataSnapshot.getValue(String.class));
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                value = "failed to read value";
             }
         });
 
-        ITEMS.add(new MusicContent(R.drawable.album_cover_death_cab, value, value, 515));
+        ITEMS.add(new MusicContent(R.drawable.album_cover_death_cab, station.getStationName(), station.getPlayingSongName(), 515));
         ITEMS.add(new MusicContent(R.drawable.album_cover_the_1975, "You", "the 1975", 591));
         ITEMS.add(new MusicContent(R.drawable.album_cover_pinback, "The Yellow Ones", "Pinback", 215));
         ITEMS.add(new MusicContent(R.drawable.album_cover_soad, "Chop suey", "System of a down", 242));
@@ -104,7 +109,7 @@ public class MainActivity extends PlayerActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.tracks);
         assert recyclerView != null;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new RecyclerViewAdapter(ITEMS, MainActivity.this,mCoverView,mTitleView));
+        recyclerView.setAdapter(new RecyclerViewAdapter(ITEMS, MainActivity.this, mCoverView, mTitleView));
 
     }
 

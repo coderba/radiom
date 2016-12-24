@@ -29,6 +29,7 @@ dependencies {
     compile "com.android.support:percent:$APPCOMPAT_VERSION"
     compile "com.github.andremion:musiccoverview:$MUSICCOVERVIEW_VERSION"
     compile 'com.google.firebase:firebase-database:10.0.0'
+    compile 'com.koushikdutta.ion:ion:2.+'
     testCompile 'junit:junit:4.12'
 }
 
