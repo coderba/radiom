@@ -27,11 +27,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.ideasoftware.raido.R;
 import com.ideasoftware.raido.model.Station;
 import com.ideasoftware.raido.music.MusicContent;
@@ -39,12 +34,12 @@ import com.ideasoftware.raido.view.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 public class MainActivity extends PlayerActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     public String value;
+    Station station;
     private View mCoverView;
     private View mTitleView;
     private View mTimeView;
@@ -52,7 +47,6 @@ public class MainActivity extends PlayerActivity {
     private View mProgressView;
     private View mFabView;
     private Intent intent;
-    Station station;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +55,14 @@ public class MainActivity extends PlayerActivity {
         station = new Station();
         List<MusicContent> ITEMS = new ArrayList<>();
 
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        //Firebase connections
+    /*    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference("message");
         databaseReference.setValue("cem başar başkan");
 
-
         station.setStationName("asdasd");
         station.setPlayingSongName("asdasd");
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -91,7 +86,7 @@ public class MainActivity extends PlayerActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-
+*/
         ITEMS.add(new MusicContent(R.drawable.album_cover_death_cab, station.getStationName(), station.getPlayingSongName(), 515));
         ITEMS.add(new MusicContent(R.drawable.album_cover_the_1975, "You", "the 1975", 591));
         ITEMS.add(new MusicContent(R.drawable.album_cover_pinback, "The Yellow Ones", "Pinback", 215));
