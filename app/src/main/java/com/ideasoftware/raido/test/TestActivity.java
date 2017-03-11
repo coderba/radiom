@@ -29,10 +29,10 @@ public class TestActivity extends Activity {
     private Button playButton;
     private MediaPlayer mediaPlayer;
 
-    private String url = "http://opml.radiotime.com/Tune.ashx?id=s161286";
-
-    /*private String url = "http://maxpag.eu:8000/metropole";
-    */
+    private String url = "http://provisioning.streamtheworld.com/pls/ALEM_FMAAC.pls";
+/*
+    private String url = "http://usa8-vn.mixstream.net:8138";
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +51,12 @@ public class TestActivity extends Activity {
 
         ArrayList<String> temp = readURLs(url);
         Ion.with(getApplicationContext())
-                .load("http://opml.radiotime.com/Browse.ashx?c=music")
+                .load("http://37.247.98.8/listen.pls?sid=22")
                 .asJsonObject()
                 .setCallback(new FutureCallback<JsonObject>() {
                     @Override
                     public void onCompleted(Exception e, JsonObject result) {
+                        Toast.makeText(getApplicationContext(),"hello world",Toast.LENGTH_SHORT).show();
                         System.out.print(result);
                         // do stuff with the result or error
                     }
@@ -63,7 +64,7 @@ public class TestActivity extends Activity {
 
         try {
             // Simply pass string in which stored URL of music.
-            mediaPlayer.setDataSource("");
+            mediaPlayer.setDataSource("http://37.247.98.8/listen.pls?sid=22");
             mediaPlayer.prepare();
         } catch (IOException e) {
             e.printStackTrace();

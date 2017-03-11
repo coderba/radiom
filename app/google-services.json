@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "707961081014-ok86tntdkpjecv9cnne8ooiqqfj8cif9.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.ideasoftware.raido",
-            "certificate_hash": "6C5DBB434D8DEDDD0D5577F0AFD44CA08DC7A102"
-          }
-        },
-        {
           "client_id": "707961081014-2ipcgc30upddhguh56asulftchi9rck7.apps.googleusercontent.com",
           "client_type": 3
         }

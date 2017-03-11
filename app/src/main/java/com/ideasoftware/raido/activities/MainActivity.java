@@ -61,7 +61,7 @@ public class MainActivity extends PlayerActivity {
         station = new Station();
         List<MusicContent> ITEMS = new ArrayList<>();
 
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+/*        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference("message");
         databaseReference.setValue("cem başar başkan");
 
@@ -90,7 +90,7 @@ public class MainActivity extends PlayerActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
-        });
+        });*/
 
         ITEMS.add(new MusicContent(R.drawable.album_cover_death_cab, station.getStationName(), station.getPlayingSongName(), 515));
         ITEMS.add(new MusicContent(R.drawable.album_cover_the_1975, "You", "the 1975", 591));
