@@ -36,3 +36,11 @@ src/test/
 .idea/libraries/
 app/src/androidTest/
 app/src/test/
+/build/
+/gradle/
+/app/build/
+/.idea/
+/.gradle/
+/Music-Player.iml
+/Music-Player-master.iml
+/raido.iml
