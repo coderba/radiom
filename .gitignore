@@ -11,6 +11,7 @@
 # Generated files
 bin/
 gen/
+/.idea/
 
 # Gradle files
 .gradle/
@@ -31,3 +32,12 @@ proguard/
 # Android Studio captures folder
 captures/
 .idea/workspace.xml
+.idea
+.gradle
+build.gradle
+/gradle/
+/.idea/libraries/
+app/src/androidTest/
+app/src/test/
+/.gradle/
+/build/
