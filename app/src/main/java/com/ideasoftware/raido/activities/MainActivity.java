@@ -27,6 +27,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.ideasoftware.raido.R;
 import com.ideasoftware.raido.model.Station;
 import com.ideasoftware.raido.music.MusicContent;
@@ -55,19 +60,21 @@ public class MainActivity extends PlayerActivity {
         station = new Station();
         List<MusicContent> ITEMS = new ArrayList<>();
 
-        //Firebase connections
-    /*    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference("message");
-        databaseReference.setValue("cem başar başkan");
-
-        station.setStationName("asdasd");
-        station.setPlayingSongName("asdasd");
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                System.out.print("metallica");
-                System.out.print(dataSnapshot.getValue(String.class));
+                for (DataSnapshot alert: dataSnapshot.getChildren()) {
+
+                    System.out.println(alert.child("id").getValue());
+                    System.out.println(alert.child("name").getValue());
+
+                    for (DataSnapshot recipient: alert.child("streams").getChildren()) {
+                        System.out.println(recipient.child("stream").getValue());
+                    }
+                }
             }
 
             @Override
@@ -79,14 +86,14 @@ public class MainActivity extends PlayerActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 System.out.print("metallica");
-                System.out.print(dataSnapshot.getValue(String.class));
+                System.out.print(dataSnapshot.getValue());
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-*/
+
         ITEMS.add(new MusicContent(R.drawable.album_cover_death_cab, station.getStationName(), station.getPlayingSongName(), 515));
         ITEMS.add(new MusicContent(R.drawable.album_cover_the_1975, "You", "the 1975", 591));
         ITEMS.add(new MusicContent(R.drawable.album_cover_pinback, "The Yellow Ones", "Pinback", 215));
