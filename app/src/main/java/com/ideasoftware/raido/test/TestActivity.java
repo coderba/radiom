@@ -51,11 +51,12 @@ public class TestActivity extends Activity {
 
         ArrayList<String> temp = readURLs(url);
         Ion.with(getApplicationContext())
-                .load("http://opml.radiotime.com/Browse.ashx?c=music")
+                .load("http://17703.live.streamtheworld.com:80/METRO_FMAAC_SC")
                 .asJsonObject()
                 .setCallback(new FutureCallback<JsonObject>() {
                     @Override
                     public void onCompleted(Exception e, JsonObject result) {
+                        System.out.println("JSON is : ");
                         System.out.print(result);
                         // do stuff with the result or error
                     }
@@ -63,7 +64,7 @@ public class TestActivity extends Activity {
 
         try {
             // Simply pass string in which stored URL of music.
-            mediaPlayer.setDataSource("");
+            mediaPlayer.setDataSource("http://17703.live.streamtheworld.com:80/METRO_FMAAC_SC");
             mediaPlayer.prepare();
         } catch (IOException e) {
             e.printStackTrace();

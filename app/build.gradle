@@ -30,6 +30,8 @@ dependencies {
     compile "com.github.andremion:musiccoverview:$MUSICCOVERVIEW_VERSION"
     compile 'com.google.firebase:firebase-database:10.0.0'
     compile 'com.koushikdutta.ion:ion:2.+'
+    compile group: 'de.mrmaffen', name: 'vlc-android-sdk', version: '3.0.0'
+
     testCompile 'junit:junit:4.12'
 }
 
