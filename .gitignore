@@ -33,3 +33,6 @@ captures/
 .idea/workspace.xml
 src/androidTest/
 src/test/
+.idea/libraries/
+app/src/androidTest/
+app/src/test/
