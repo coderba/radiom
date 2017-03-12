@@ -53,7 +53,7 @@ public class MainActivity extends PlayerActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String deneme = "";
+                String coverUrl = "";
 
                 System.out.println("\n**********\n");
 
@@ -73,15 +73,15 @@ public class MainActivity extends PlayerActivity {
 
                     for (DataSnapshot recipient : alert.child("image").getChildren()) {
 
-                        deneme = alert.child("image").getChildren().iterator().next().getValue().toString();
+                        coverUrl = alert.child("image").getChildren().iterator().next().getValue().toString();
 
-                        deneme = deneme.substring(5, deneme.length() - 1);
-
-                        System.out.println("THUMB URL: " + deneme);
+                        coverUrl = coverUrl.substring(5, coverUrl.length() - 1);
+                        station.setCoverUrl(coverUrl);
+                        System.out.println("THUMB URL: " + coverUrl);
 
                     }
 
-                    ITEMS.add(new MusicContent(deneme, station.getStationName(), station.getPlayingSongName(), 515));
+                    ITEMS.add(new MusicContent(station.getCoverUrl(), station.getStationName(), station.getPlayingSongName(), 515));
 
                     System.out.println("\n**********\n");
                 }

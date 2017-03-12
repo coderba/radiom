@@ -11,10 +11,13 @@ public class Station {
     public String stationName;
     public String playingSongName;
     public String streamUrl;
+    public String coverUrl;
 
-    public Station(){
+    public Station() {
 
-    };
+    }
+
+    ;
 
     public Station(String stationName, String playingSongName) {
         this.stationName = stationName;
@@ -43,5 +46,13 @@ public class Station {
 
     public void setStreamUrl(String streamUrl) {
         this.streamUrl = streamUrl;
+    }
+
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
     }
 }
