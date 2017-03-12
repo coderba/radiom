@@ -10,6 +10,7 @@ public class Station {
 
     public String stationName;
     public String playingSongName;
+    public String streamUrl;
 
     public Station(){
 
@@ -34,5 +35,13 @@ public class Station {
 
     public void setPlayingSongName(String playingSongName) {
         this.playingSongName = playingSongName;
+    }
+
+    public String getStreamUrl() {
+        return streamUrl;
+    }
+
+    public void setStreamUrl(String streamUrl) {
+        this.streamUrl = streamUrl;
     }
 }

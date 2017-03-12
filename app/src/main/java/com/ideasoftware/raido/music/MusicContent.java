@@ -1,19 +1,19 @@
 package com.ideasoftware.raido.music;
 
 public class MusicContent {
-        private final int mCover;
+    private final String mCover;
         private final String mTitle;
         private final String mArtist;
         private final long mDuration;
 
-        public MusicContent(int cover, String title, String artist, long duration) {
+    public MusicContent(String cover, String title, String artist, long duration) {
             mCover = cover;
             mTitle = title;
             mArtist = artist;
             mDuration = duration;
         }
 
-        public int getCover() {
+    public String getCover() {
             return mCover;
         }
 

@@ -1,19 +1,3 @@
-/*
- * Copyright (c) 2016. André Mion
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.ideasoftware.raido.activities;
 
 import android.content.Intent;
@@ -43,8 +27,8 @@ import java.util.List;
 public class MainActivity extends PlayerActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    public String value;
-    Station station;
+    private String value;
+    private Station station;
     private View mCoverView;
     private View mTitleView;
     private View mTimeView;
@@ -58,26 +42,48 @@ public class MainActivity extends PlayerActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_list);
         station = new Station();
-        List<MusicContent> ITEMS = new ArrayList<>();
+
+        final List<MusicContent> ITEMS = new ArrayList<>();
 
         //Firebase connections
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference("message");
-        databaseReference.setValue("cem başar başkan");
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
 
-        station.setStationName("asdasd");
-        station.setPlayingSongName("asdasd");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                String deneme = "";
+
+                System.out.println("\n**********\n");
+
                 for (DataSnapshot alert : dataSnapshot.getChildren()) {
-                    System.out.println(alert.child("id").getValue());
-                    System.out.println(alert.child("name").getValue());
+
+                    Station station = new Station();
+
+                    System.out.println("ID: " + alert.child("id").getValue());
+                    System.out.println("NAME: " + alert.child("name").getValue());
+
+                    station.setStationName(alert.child("name").getValue().toString());
 
                     for (DataSnapshot recipient : alert.child("streams").getChildren()) {
-                        System.out.println(recipient.child("stream").getValue());
+                        System.out.println("STREAM URL: " + recipient.child("stream").getValue());
+                        station.setStreamUrl(recipient.child("stream").getValue().toString());
                     }
+
+                    for (DataSnapshot recipient : alert.child("image").getChildren()) {
+
+                        deneme = alert.child("image").getChildren().iterator().next().getValue().toString();
+
+                        deneme = deneme.substring(5, deneme.length() - 1);
+
+                        System.out.println("THUMB URL: " + deneme);
+
+                    }
+
+                    ITEMS.add(new MusicContent(deneme, station.getStationName(), station.getPlayingSongName(), 515));
+
+                    System.out.println("\n**********\n");
                 }
             }
 
@@ -89,8 +95,9 @@ public class MainActivity extends PlayerActivity {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                System.out.print("metallica");
+/*
                 System.out.print(dataSnapshot.getValue());
+*/
             }
 
             @Override
@@ -98,11 +105,6 @@ public class MainActivity extends PlayerActivity {
             }
         });
 
-        ITEMS.add(new MusicContent(R.drawable.album_cover_death_cab, station.getStationName(), station.getPlayingSongName(), 515));
-        ITEMS.add(new MusicContent(R.drawable.album_cover_the_1975, "You", "the 1975", 591));
-        ITEMS.add(new MusicContent(R.drawable.album_cover_pinback, "The Yellow Ones", "Pinback", 215));
-        ITEMS.add(new MusicContent(R.drawable.album_cover_soad, "Chop suey", "System of a down", 242));
-        ITEMS.add(new MusicContent(R.drawable.album_cover_two_door, "Something good can work", "Two Door Cinema Club", 164));
 
         mCoverView = findViewById(R.id.cover);
         mTitleView = findViewById(R.id.title);

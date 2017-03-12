@@ -23,10 +23,7 @@ public class DetailActivity extends PlayerActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_detail);
 
-        //songTextView = (TextView) findViewById(R.id.song_name);
         mCoverView = (MusicCoverView) findViewById(R.id.cover);
-        //mCoverView.setBackgroundResource(R.drawable.metallica_load);
-        mCoverView.setImageResource(R.drawable.metallica_load);
         songTextView = (TextView) findViewById(R.id.song_name);
         bandTextView = (TextView) findViewById(R.id.band_name);
 

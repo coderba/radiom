@@ -18,6 +18,7 @@ import com.ideasoftware.raido.R;
 import com.ideasoftware.raido.activities.DetailActivity;
 import com.ideasoftware.raido.music.MusicContent;
 import com.ideasoftware.raido.util.Helper;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -49,7 +50,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(final ViewHolder holder, int position) {
 
         holder.mItem = mValues.get(position);
-        ((ImageView) holder.mCoverView).setImageResource(holder.mItem.getCover());
+
+        Picasso.with(mActivity.getApplicationContext()).load(holder.mItem.getCover()).into((ImageView) holder.mCoverView);
+
         ((TextView) holder.mTitleView).setText(holder.mItem.getTitle());
         ((TextView) holder.mArtistView).setText(holder.mItem.getArtist());
         //((TextView)holder.mDurationView).setText(DateUtils.formatElapsedTime(holder.mItem.getDuration()));
